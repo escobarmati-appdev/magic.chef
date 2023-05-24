@@ -1,0 +1,101 @@
+<div>
+  <div>
+    <h1>
+      Ingredient #<%= @the_ingredient.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/ingredients">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_ingredient/<%= @the_ingredient.id %>">
+          Delete ingredient
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        User ingredients content
+      </dt>
+      <dd>
+        <%= @the_ingredient.user_ingredients_content %>
+      </dd>
+
+      <dt>
+        Role
+      </dt>
+      <dd>
+        <%= @the_ingredient.role %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_ingredient.user_id %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_ingredient.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_ingredient.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit ingredient
+    </h2>
+
+    <form action="/modify_ingredient/<%= @the_ingredient.id %>"  method="post" >
+      <div>
+        <label for="user_ingredients_content_box">
+          User ingredients content
+        </label>
+
+        <input type="text" id="user_ingredients_content_box" name="query_user_ingredients_content" value="<%= @the_ingredient.user_ingredients_content %>">
+      </div>
+
+      <div>
+        <label for="role_box">
+          Role
+        </label>
+
+        <input type="text" id="role_box" name="query_role" value="<%= @the_ingredient.role %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_ingredient.user_id %>">
+      </div>
+
+      <button>
+        Update ingredient
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
