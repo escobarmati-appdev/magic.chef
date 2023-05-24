@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem "ruby-openai"
+
 ruby '2.7.3'
 
 gem 'bcrypt'
