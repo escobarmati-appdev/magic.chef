@@ -52,6 +52,10 @@
         </th>
 
         <th>
+          User ID
+        </th>
+
+        <th>
         </th>
       </tr>
 
@@ -70,6 +74,9 @@
         </td>
         <td>
           <%= time_ago_in_words(a_recipe.updated_at) %> ago
+        </td>
+        <td>
+          <%= a_recipe.user_id %>
         </td>
 
         <td>

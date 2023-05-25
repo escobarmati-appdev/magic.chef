@@ -20,6 +20,7 @@ class RecipesController < ApplicationController
   def create
     the_recipe = Recipe.new
     the_recipe.ingredient = params.fetch("query_ingredient")
+    the_recipe.user_id = session.fetch(:user_id)
 
     if the_recipe.valid?
       the_recipe.save
