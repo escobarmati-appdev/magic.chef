@@ -11,20 +11,20 @@
 <div>
   <div>
     <h3>
-      I'm a superpowered Magic Chef who will help you creating great recipes for your home's ingredients
+      I'm a superpowered Magic Chef who will help you create great recipes with your home ingredients
     </h3>
 
     <form action="/insert_recipe" method="post">
       <div>
         <label for="ingredient_box">
         <div>
-          Please, put the ingredients that you want to use:
+          Please, let me know the ingredients that you want to use:
         </div>
         </label>
         <input type="text" id="ingredient_box" name="query_ingredient" placeholder="1 Tomato, 2 onions,...">
       </div>
 
-      <button>
+      <button class="btn btn-success">
         Create recipe
       </button>
     </form>
@@ -34,58 +34,29 @@
 <hr>
 <div>
   <div>
-    <table border="1">
-      <tr>
-        <th>
-          ID
-        </th>
 
-        <th>
-          Ingredient
-        </th>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Created at</th>
+      <th scope="col">User name</th>
+      <th scope="col">Updated at</th>
+    </tr>
+  </thead>
 
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
-          User ID
-        </th>
-
-        <th>
-        </th>
-      </tr>
-
-      <% @list_of_recipes.each do |a_recipe| %>
-      <tr>
-        <td>
-          <%= a_recipe.id %>
-        </td>
-
-        <td>
-          <%= a_recipe.ingredient %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_recipe.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_recipe.updated_at) %> ago
-        </td>
-        <td>
-          <%= a_recipe.user_id %>
-        </td>
-
-        <td>
-          <a href="/recipes/<%= a_recipe.id %>">
-            Show details
-          </a>
-        </td>
-      </tr>
+  <tbody>
+  <% @list_of_recipes.each do |a_recipe| %>
+    <tr>
+      <th scope="row"><%= a_recipe.ingredient %></th>
+      <td><%= time_ago_in_words(a_recipe.created_at) %> ago</td>
+      <td><%= a_recipe.user.first_name %></td>
+      <td><%= time_ago_in_words(a_recipe.updated_at) %> ago</td>
+      <th>           <a href="/recipes/<%= a_recipe.id %>">
+            Show recipe
+          </a></th>
+    </tr>
+     </tbody>
       <% end %>
     </table>
   </div>
