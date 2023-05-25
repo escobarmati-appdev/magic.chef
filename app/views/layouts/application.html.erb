@@ -4,6 +4,8 @@
     <title>Base Rails</title>
     <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.css">
+
     <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
     <meta charset="utf-8">
 
@@ -18,24 +20,31 @@
   <body>
   <div style="max-width: 800px; margin: auto">
 
-
-    <% if session.fetch(:user_id) == nil %>
-    <li>
-    <a href="/user_sign_up">Sign up</a>
-    </li>
-    <li>
-    <a href="/user_sign_in">Sign in</a>
-    </li>
-    <% else %>
-    <li>
-    <a href="/user_sign_out">Sign out</a>
-    </li>
-    <% end %>
-
-
       <p style="color: green"> <%= notice %> </p>
       <p style="color: red"> <%= alert %> </p>
 
+      <nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Magic Chef</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">My recipes</a>
+
+    <% if session.fetch(:user_id) == nil %>
+    <a class="nav-link" href="/user_sign_up">Sign up</a>
+    <a class="nav-link" href="/user_sign_in">Sign in</a>
+    <% else %>
+    <a class="nav-link" href="/user_sign_out">Sign out</a>
+    <% end %>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class = "container py-5">
     <%= yield %>
+     </div>
   </body>
 </html>

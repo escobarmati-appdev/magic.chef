@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      List of all recipes
+      Your Magic Chef at your service
     </h1>
   </div>
 </div>
@@ -10,17 +10,18 @@
 
 <div>
   <div>
-    <h2>
-      Add a new recipe
-    </h2>
+    <h3>
+      Please use me to find a great recipes for the ingredients that you have at home
+    </h3>
 
     <form action="/insert_recipe" method="post">
       <div>
         <label for="ingredient_box">
-          Ingredient
+        <div>
+          Put your ingredients here:
+        </div>
         </label>
-
-        <input type="text" id="ingredient_box" name="query_ingredient">
+        <input type="text" id="ingredient_box" name="query_ingredient" placeholder="1 Tomato, 2 onions,...">
       </div>
 
       <button>
