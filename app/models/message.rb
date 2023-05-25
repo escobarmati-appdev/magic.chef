@@ -10,4 +10,10 @@
 #  recipe_id  :integer
 #
 class Message < ApplicationRecord
+
+  belongs_to(:recipe, { :required => true, :class_name => "Recipe", :foreign_key => "recipe_id" })
+
+  validates :content, presence: true
+  validates :role, presence: true
+
 end
