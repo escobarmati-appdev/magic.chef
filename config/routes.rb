@@ -9,13 +9,13 @@ Rails.application.routes.draw do
   # CREATE RECORD
   post("/insert_user", { :controller => "user_authentication", :action => "create"  })
       
-  # EDIT PROFILE FORM        
-  get("/edit_user_profile", { :controller => "user_authentication", :action => "edit_profile_form" })       
-  # UPDATE RECORD
-  post("/modify_user", { :controller => "user_authentication", :action => "update" })
+  # # EDIT PROFILE FORM        
+  # get("/edit_user_profile", { :controller => "user_authentication", :action => "edit_profile_form" })       
+  # # UPDATE RECORD
+  # post("/modify_user", { :controller => "user_authentication", :action => "update" })
   
-  # DELETE RECORD
-  get("/cancel_user_account", { :controller => "user_authentication", :action => "destroy" })
+  # # DELETE RECORD
+  # get("/cancel_user_account", { :controller => "user_authentication", :action => "destroy" })
 
   # ------------------------------
 
@@ -43,8 +43,8 @@ Rails.application.routes.draw do
   
   # post("/modify_recipe/:path_id", { :controller => "recipes", :action => "update" })
   
-  # # DELETE
-  # get("/delete_recipe/:path_id", { :controller => "recipes", :action => "destroy" })
+  # DELETE
+  get("/delete_recipe/:path_id", { :controller => "recipes", :action => "destroy" })
 
   #------------------------------
 

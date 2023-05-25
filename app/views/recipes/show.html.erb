@@ -11,12 +11,18 @@
         </a>
       </div>
 
+
+<% if session.fetch(:user_id) == @the_recipe.user_id %>
       <div>
         <a href="/delete_recipe/<%= @the_recipe.id %>">
           Delete recipe
         </a>
-      </div>
+        </div>
+        <% else %>
+        <% end %>
     </div>
+
+
 
     <dl>
       <dt>
@@ -51,7 +57,6 @@
     <dd><%= simple_format(message.content) %></dd>
   <% end %>
 
-  <dt>user</dt>
   <dd>
     <form action="/insert_message" method="post">
       <input type="hidden" name="query_recipe_id" value="<%= @the_recipe.id %>">
