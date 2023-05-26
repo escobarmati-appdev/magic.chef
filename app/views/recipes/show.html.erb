@@ -26,7 +26,7 @@
 
     <dl>
       <dt>
-        Ingredient
+        Ingredients
       </dt>
       <dd>
         <%= @the_recipe.ingredient %>
@@ -39,12 +39,6 @@
         <%= time_ago_in_words(@the_recipe.created_at) %> ago
       </dd>
 
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_recipe.updated_at) %> ago
-      </dd>
     </dl>
   </div>
 </div>
@@ -71,22 +65,14 @@
         <textarea id="content_box" name="query_content" placeholder="Enter any suggestion to modify the recipe..." cols="80" rows="10"></textarea>
       </div>
 
-      <button>
-        Ask for a modification in the recipe
+      <button class="btn btn-primary">
+        Ask a modification in the recipe
       </button>
     </form>
   </dd>
 </dl>
 
 
-
-<hr>
-
-      <div>
-        <a href="/recipes">
-          Create new recipe
-        </a>
-      </div>
 
 
 

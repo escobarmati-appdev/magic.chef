@@ -1,0 +1,45 @@
+<div>
+  <div>
+    <h1>
+      Your recipes
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Ingredients</th>
+      <th scope="col">Created at</th>
+      <th scope="col">Updated at</th>
+    </tr>
+  </thead>
+
+
+
+  <tbody>
+  <% @list_of_recipes.each do |a_recipe| %>
+    <tr>
+      <th scope="row"><%= a_recipe.ingredient %></th>
+      <td><%= time_ago_in_words(a_recipe.created_at) %> ago</td>
+      <td><%= time_ago_in_words(a_recipe.updated_at) %> ago</td>
+      <th>           <a href="/recipes/<%= a_recipe.id %>">
+            Show recipe
+          </a></th>
+    </tr>
+     </tbody>
+      <% end %>
+    </table>
+  </div>
+        <div>
+        <a href="/recipes">
+          Go back
+        </a>
+      </div>
+</div>
+
+<hr>

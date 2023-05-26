@@ -10,9 +10,13 @@
 
 <div>
   <div>
-    <h3>
-      I'm a superpowered Magic Chef who will help you create great recipes with your home ingredients
-    </h3>
+    <h4>
+      I'm a superpowered AI Chef who will help you create great recipes with your home ingredients
+    </h4>
+
+    <div style="text-align: center;">
+      <img src="https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/4-italian-chef-csa-images.jpg" width="250" style="text-align: center;">
+    </div>
 
     <form action="/insert_recipe" method="post">
       <div>
@@ -21,12 +25,16 @@
           Please, let me know the ingredients that you want to use:
         </div>
         </label>
-        <input type="text" id="ingredient_box" name="query_ingredient" placeholder="1 Tomato, 2 onions,...">
+               <div padding: 25px 50px 75px;>
+        <input type="text" id="ingredient_box" name="query_ingredient" placeholder="1 Tomato, 2 onions,..." class="form-control">
+                </div>
       </div>
 
-      <button class="btn btn-success">
+      <div>
+      <button class="btn btn-success" style="topmargin: 100;">
         Create recipe
       </button>
+      </div>
     </form>
   </div>
 </div>
@@ -44,6 +52,12 @@
       <th scope="col">Updated at</th>
     </tr>
   </thead>
+
+
+    <h1>
+      Public Recipes
+    </h1>
+
 
   <tbody>
   <% @list_of_recipes.each do |a_recipe| %>

@@ -7,6 +7,16 @@ class RecipesController < ApplicationController
     render({ :template => "recipes/index.html.erb" })
   end
 
+  def myrecipes
+
+    the_id = session[:user_id]
+    matching_recipes = Recipe.where({ :user_id => the_id })
+
+    @list_of_recipes = matching_recipes.order({ :created_at => :desc })
+
+    render({ :template => "recipes/myrecipes.html.erb" })
+  end
+
   def show
     the_id = params.fetch("path_id")
 
